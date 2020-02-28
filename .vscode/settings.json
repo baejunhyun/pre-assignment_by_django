@@ -1,0 +1,5 @@
+{
+    "git.ignoreLimitWarning": true,
+    "python.pythonPath": "/Users/BAEJUNHYUN/.local/share/virtualenvs/pre-assignment_by_django-gictHbIQ/bin/python",
+    "python.formatting.provider": "black"
+}
