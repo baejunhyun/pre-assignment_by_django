@@ -18,7 +18,11 @@ def package_detail_view(request, pk=None):
     context = {
         "package": tf,
         "depends": models.PackageModel.objects.filter(name__in=depends),
+<<<<<<< HEAD
         "r_depend": models.PackageModel.objects.filter(
+=======
+        "r_depends": models.PackageModel.objects.filter(
+>>>>>>> 2
             depends__icontains="[" + tf.name + "]"
         ).order_by("name"),
     }
