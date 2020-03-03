@@ -1,8 +1,6 @@
-<a href="{% url 'status_parsing:package_parsing_view' %}">
-<button>Update List</button></a>
+<a href="{% url 'status_parsing:package_parsing_view' %}"><button>Update List</button></a>
 <ul>
 {% for p in package %}
-    <a href="{% url 'status_parsing:package_detail_view' pk=p.id %}">
-    <li>{{ p.name }}</li></a>
+    <a href="{% url 'status_parsing:package_detail_view' pk=p.id %}"><li>{{ p.name }}</li></a>
 {% endfor %}
 </ul>
