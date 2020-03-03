@@ -18,11 +18,7 @@ def package_detail_view(request, pk=None):
     context = {
         "package": tf,
         "depends": models.PackageModel.objects.filter(name__in=depends),
-<<<<<<< HEAD
-        "r_depend": models.PackageModel.objects.filter(
-=======
         "r_depends": models.PackageModel.objects.filter(
->>>>>>> 2
             depends__icontains="[" + tf.name + "]"
         ).order_by("name"),
     }
@@ -33,7 +29,6 @@ def package_detail_view(request, pk=None):
 def package_parsing_view(request):
     models.PackageModel.objects.all().delete()
     with open("status.real.txt", "r") as f:
-        # with open ("./pre-assignment_by_django/status.real.txt", "r") as f:
         pattern = "^[A-Za-z-]+:.+"
         p = re.compile(pattern)
         pack_inst = None
