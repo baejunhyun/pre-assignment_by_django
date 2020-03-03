@@ -7,24 +7,16 @@ Description
 <br/>
 Dependencies
 <br/>
-
 <ul>
-
 {% for d in depends %}
 <li><a href = "{% url 'status_parsing:package_detail_view' pk=d.id %}">{{ d.name }}</a></li>
-
 {% endfor %}
-
 </ul>
 <br/>
 Reverse Dependencies
 <br/>
-
 <ul>
-
 {% for d in r_depends %}
 <li><a href = "{% url 'status_parsing:package_detail_view' pk=d.id %}">{{ d.name }}</a></li>
-
 {% endfor %}
-
 </ul>
