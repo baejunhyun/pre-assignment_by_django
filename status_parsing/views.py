@@ -6,7 +6,7 @@ import re
 
 def package_list_view(request):
     context = {}
-    context["package"] = models.PackageModel.objects.all().order_by("name")
+    context["package_list"] = models.PackageModel.objects.all().order_by("name")
     return render(request, "status_parsing/package_list_view.html", context=context)
 
 
@@ -16,7 +16,7 @@ def package_detail_view(request, pk=None):
     depends = tf.depends.replace("[", "").replace("]", "").split(",")
 
     context = {
-        "package": tf,
+        "package_instance": tf,
         "depends": models.PackageModel.objects.filter(name__in=depends),
         "r_depends": models.PackageModel.objects.filter(
             depends__icontains="[" + tf.name + "]"
